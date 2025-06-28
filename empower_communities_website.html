@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empower Communities Now INC - Supporting Central Iowa Families</title>
+    <meta name="description" content="Empower Communities Now INC provides job placement, housing assistance, food distribution, and community support services in Des Moines, Iowa.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --royal-blue: #1e40af;
+            --forest-green: #166534;
+            --light-gray: #f3f4f6;
+            --dark-gray: #374151;
+            --white: #ffffff;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --warm-orange: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(135deg, var(--royal-blue), var(--forest-green));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 8px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-image svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--warm-orange);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.9), rgba(22, 101, 52, 0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e5e7eb" width="1200" height="600"/><g fill="%23d1d5db"><circle cx="200" cy="150" r="60"/><circle cx="400" cy="300" r="80"/><circle cx="800" cy="200" r="70"/><circle cx="1000" cy="400" r="90"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--warm-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--royal-blue);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--royal-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--forest-green);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--royal-blue);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--royal-blue);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--royal-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--forest-green);
+        }
+
+        .stat-label {
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .about-image {
+            background: linear-gradient(45deg, var(--royal-blue), var(--forest-green));
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .about-image i {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, var(--royal-blue), var(--forest-green));
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .team-card h3 {
+            color: var(--royal-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .title {
+            color: var(--forest-green);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--royal-blue), var(--forest-green));
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--warm-orange);
+        }
+
+        .quick-actions {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .quick-actions h3 {
+            color: var(--royal-blue);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            background: white;
+            border: 2px solid var(--royal-blue);
+            color: var(--royal-blue);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .action-btn:hover {
+            background: var(--royal-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--warm-orange);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--warm-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4b5563;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Emergency Contact Banner */
+        .emergency-banner {
+            background: var(--warm-orange);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Emergency Contact Banner -->
+    <div class="emergency-banner">
+        🚨 Need immediate assistance? Call us at <a href="tel:515-473-8760">(515) 473-8760</a> | Monday-Friday 9AM-5PM
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <div class="logo-image">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Supporting Hands -->
+                        <path d="M30 140 Q20 130 25 120 Q35 115 45 125 L55 135 Q60 140 55 145 L45 155 Q40 160 35 155 Z" fill="#1e40af"/>
+                        <path d="M170 140 Q180 130 175 120 Q165 115 155 125 L145 135 Q140 140 145 145 L155 155 Q160 160 165 155 Z" fill="#1e40af"/>
+                        
+                        <!-- Central Tree/People -->
+                        <!-- Main figure -->
+                        <ellipse cx="100" cy="85" rx="8" ry="8" fill="#166534"/>
+                        <path d="M100 95 L95 130 L105 130 Z" fill="#166534"/>
+                        <path d="M85 110 L100 105 L115 110" stroke="#166534" stroke-width="3" fill="none"/>
+                        
+                        <!-- Side figures -->
+                        <ellipse cx="70" cy="95" rx="6" ry="6" fill="#1e40af"/>
+                        <path d="M70 102 L67 125 L73 125 Z" fill="#1e40af"/>
+                        <path d="M60 115 L70 112 L80 115" stroke="#1e40af" stroke-width="2" fill="none"/>
+                        
+                        <ellipse cx="130" cy="95" rx="6" ry="6" fill="#1e40af"/>
+                        <path d="M130 102 L127 125 L133 125 Z" fill="#1e40af"/>
+                        <path d="M120 115 L130 112 L140 115" stroke="#1e40af" stroke-width="2" fill="none"/>
+                        
+                        <!-- Sun -->
+                        <circle cx="100" cy="40" r="12" fill="#f59e0b"/>
+                        
+                        <!-- Leaves -->
+                        <ellipse cx="85" cy="60" rx="8" ry="15" fill="#22c55e" transform="rotate(-20 85 60)"/>
+                        <ellipse cx="115" cy="60" rx="8" ry="15" fill="#22c55e" transform="rotate(20 115 60)"/>
+                        <ellipse cx="70" cy="75" rx="6" ry="12" fill="#16a34a" transform="rotate(-30 70 75)"/>
+                        <ellipse cx="130" cy="75" rx="6" ry="12" fill="#16a34a" transform="rotate(30 130 75)"/>
+                        <ellipse cx="60" cy="90" rx="5" ry="10" fill="#166534" transform="rotate(-40 60 90)"/>
+                        <ellipse cx="140" cy="90" rx="5" ry="10" fill="#166534" transform="rotate(40 140 90)"/>
+                    </svg>
+                </div>
+                <span>Empower Communities Now</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Stories</a></li>
+                <li><a href="#volunteer">Volunteer</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#donate" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Donate</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Empowering Communities, Changing Lives</h1>
+            <p>Providing essential services, resources, and opportunities to underserved populations in Central Iowa. Together, we build stronger, more resilient communities.</p>
+            <div class="cta-buttons">
+                <a href="#intake" class="btn btn-primary">Request Services</a>
+                <a href="#donate" class="btn btn-secondary">Support Our Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive support services designed to empower individuals and families toward independence and success.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Job Placement Services</h3>
+                    <p>Connecting individuals with employers, resume writing assistance, interview preparation, and workforce development support to build sustainable careers.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-home"></i>
+                    <h3>Housing & Host Home Support</h3>
+                    <p>Housing navigation, rental assistance, host home matching, and support services to ensure safe, stable housing for all community members.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food & Clothing Distribution</h3>
+                    <p>Emergency food assistance, seasonal clothing drives, and essential item distribution through community partnerships and volunteer networks.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-car"></i>
+                    <h3>Transportation Support</h3>
+                    <p>Reliable transportation to work, medical appointments, and essential services, removing barriers to employment and healthcare access.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Public Benefits Assistance</h3>
+                    <p>Guidance with SNAP, Medicaid, TANF, and other benefit applications, ensuring families access the support they need and qualify for.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-store"></i>
+                    <h3>Small Business Support</h3>
+                    <p>Business registration guidance, accounting assistance, and resource connection for local entrepreneurs building economic opportunities.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Newcomer Integration</h3>
+                    <p>Comprehensive support for new arrivals including community orientation, document assistance, and cultural integration services.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Seasonal Family Programs</h3>
+                    <p>Back-to-school supplies, winter gear distribution, holiday assistance, and year-round family support programs addressing seasonal needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Community Stories</h2>
+                <p>Real stories from community members whose lives have been transformed through our services.</p>
+            </div>
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="service-card fade-in" style="border-left-color: var(--warm-orange);">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(45deg, var(--royal-blue), var(--forest-green)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">M</div>
+                        <div>
+                            <h4 style="color: var(--royal-blue); margin: 0;">Maria S.</h4>
+                            <p style="margin: 0; color: var(--dark-gray); font-size: 0.9rem;">Job Placement Program</p>
+                        </div>
+                    </div>
+                    <p style="font-style: italic; margin-bottom: 15px;">"After being unemployed for 8 months, Empower Communities Now helped me update my resume and connected me with an employer. Within 3 weeks, I had a full-time job with benefits. They didn't just find me work - they gave me hope."</p>
+                    <div style="color: var(--warm-orange); font-size: 1.2rem;">★★★★★</div>
+                </div>
+                
+                <div class="service-card fade-in" style="border-left-color: var(--warm-orange);">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(45deg, var(--forest-green), var(--royal-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">J</div>
+                        <div>
+                            <h4 style="color: var(--royal-blue); margin: 0;">James R.</h4>
+                            <p style="margin: 0; color: var(--dark-gray); font-size: 0.9rem;">Housing Support</p>
+                        </div>
+                    </div>
+                    <p style="font-style: italic; margin-bottom: 15px;">"When I was facing eviction, Andrew and his team helped me navigate rental assistance programs and connected me with resources I didn't know existed. They saved my family's home and our stability."</p>
+                    <div style="color: var(--warm-orange); font-size: 1.2rem;">★★★★★</div>
+                </div>
+                
+                <div class="service-card fade-in" style="border-left-color: var(--warm-orange);">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(45deg, var(--warm-orange), var(--forest-green)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">A</div>
+                        <div>
+                            <h4 style="color: var(--royal-blue); margin: 0;">Aisha M.</h4>
+                            <p style="margin: 0; color: var(--dark-gray); font-size: 0.9rem;">Newcomer Integration</p>
+                        </div>
+                    </div>
+                    <p style="font-style: italic; margin-bottom: 15px;">"As a new arrival to Iowa, everything felt overwhelming. The team helped me understand the community, complete important paperwork, and connected me with resources. They made Des Moines feel like home."</p>
+                    <div style="color: var(--warm-orange); font-size: 1.2rem;">★★★★★</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--dark-gray); font-style: italic;">We're proud to serve our community with dignity and respect. Every story matters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section id="volunteer" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Our Mission</h2>
+                <p>Make a difference in Central Iowa. Whether you have an hour a week or a day a month, your contribution matters.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3 style="color: var(--royal-blue); margin-bottom: 1.5rem;">Volunteer Opportunities</h3>
+                    
+                    <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--forest-green); margin-bottom: 1rem;"><i class="fas fa-hands-helping" style="margin-right: 10px;"></i>Direct Service Volunteers</h4>
+                        <p><strong>Time Commitment:</strong> 4+ hours/week</p>
+                        <p>Help with intake interviews, transportation services, food distribution, and one-on-one client support.</p>
+                    </div>
+                    
+                    <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--forest-green); margin-bottom: 1rem;"><i class="fas fa-laptop" style="margin-right: 10px;"></i>Administrative Support</h4>
+                        <p><strong>Time Commitment:</strong> 2-3 hours/week</p>
+                        <p>Data entry, phone calls, filing, social media management, and general office assistance.</p>
+                    </div>
+                    
+                    <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--forest-green); margin-bottom: 1rem;"><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i>Event Volunteers</h4>
+                        <p><strong>Time Commitment:</strong> Seasonal</p>
+                        <p>Help with community drives, seasonal programs, fundraising events, and outreach activities.</p>
+                    </div>
+                    
+                    <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--forest-green); margin-bottom: 1rem;"><i class="fas fa-briefcase" style="margin-right: 10px;"></i>Professional Skills</h4>
+                        <p><strong>Time Commitment:</strong> Project-based</p>
+                        <p>Legal advice, accounting, marketing, grant writing, and other professional expertise as needed.</p>
+                    </div>
+                </div>
+                
+                <div class="about-image fade-in" style="background: linear-gradient(45deg, var(--forest-green), var(--royal-blue));">
+                    <i class="fas fa-heart"></i>
+                    <h3>Ready to Help?</h3>
+                    <p>Complete our volunteer application and we'll match you with opportunities that fit your schedule and interests.</p>
+                    <a href="mailto:affordable128@gmail.com?subject=Volunteer Application" class="btn btn-primary" style="margin-top: 1rem; background: var(--warm-orange);">Apply to Volunteer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Support Our Mission</h2>
+                <p>Your donation directly funds essential services for Central Iowa families. Every dollar makes a difference.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
+                <div class="service-card fade-in" style="text-align: center; border-left-color: var(--warm-orange);">
+                    <div style="font-size: 2.5rem; color: var(--royal-blue); margin-bottom: 1rem;">$25</div>
+                    <h3>Community Helper</h3>
+                    <p>Provides transportation to one job interview or medical appointment</p>
+                    <a href="mailto:affordable128@gmail.com?subject=Donation - $25" class="btn btn-primary" style="background: var(--royal-blue); margin-top: 1rem;">Donate $25</a>
+                </div>
+                
+                <div class="service-card fade-in" style="text-align: center; border-left-color: var(--warm-orange); transform: scale(1.05); border: 2px solid var(--warm-orange);">
+                    <div style="background: var(--warm-orange); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 1rem; display: inline-block;">MOST POPULAR</div>
+                    <div style="font-size: 2.5rem; color: var(--forest-green); margin-bottom: 1rem;">$50</div>
+                    <h3>Family Supporter</h3>
+                    <p>Funds one family's emergency food assistance for a week</p>
+                    <a href="mailto:affordable128@gmail.com?subject=Donation - $50" class="btn btn-primary" style="background: var(--forest-green); margin-top: 1rem;">Donate $50</a>
+                </div>
+                
+                <div class="service-card fade-in" style="text-align: center; border-left-color: var(--warm-orange);">
+                    <div style="font-size: 2.5rem; color: var(--royal-blue); margin-bottom: 1rem;">$100</div>
+                    <h3>Community Champion</h3>
+                    <p>Supports comprehensive job placement services for one individual</p>
+                    <a href="mailto:affordable128@gmail.com?subject=Donation - $100" class="btn btn-primary" style="background: var(--royal-blue); margin-top: 1rem;">Donate $100</a>
+                </div>
+                
+                <div class="service-card fade-in" style="text-align: center; border-left-color: var(--warm-orange);">
+                    <div style="font-size: 2.5rem; color: var(--forest-green); margin-bottom: 1rem;">$250+</div>
+                    <h3>Mission Partner</h3>
+                    <p>Funds program operations and helps us serve more families</p>
+                    <a href="mailto:affordable128@gmail.com?subject=Donation - Custom Amount" class="btn btn-primary" style="background: var(--forest-green); margin-top: 1rem;">Custom Amount</a>
+                </div>
+            </div>
+            
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: 2rem;">
+                <h3 style="color: var(--royal-blue); text-align: center; margin-bottom: 1.5rem;">Other Ways to Give</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-box" style="font-size: 2rem; color: var(--forest-green); margin-bottom: 1rem;"></i>
+                        <h4 style="color: var(--royal-blue);">In-Kind Donations</h4>
+                        <p>Food, clothing, office supplies, and other needed items</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-calendar-check" style="font-size: 2rem; color: var(--forest-green); margin-bottom: 1rem;"></i>
+                        <h4 style="color: var(--royal-blue);">Monthly Giving</h4>
+                        <p>Sustainable support through recurring monthly donations</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-building" style="font-size: 2rem; color: var(--forest-green); margin-bottom: 1rem;"></i>
+                        <h4 style="color: var(--royal-blue);">Corporate Partnership</h4>
+                        <p>Employee matching programs and corporate sponsorships</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--light-gray); border-radius: 10px;">
+                <p style="color: var(--dark-gray); font-style: italic; margin-bottom: 1rem;">
+                    <strong>100% of your donation goes directly to programs and services.</strong><br>
+                    Empower Communities Now INC is a registered 501(c)(3) nonprofit organization.
+                </p>
+                <p style="color: var(--dark-gray); font-size: 0.9rem;">
+                    For questions about donations, grants, or corporate partnerships, contact us at <a href="mailto:affordable128@gmail.com" style="color: var(--royal-blue);">affordable128@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>Our Story & Mission</h2>
+                    <p><strong>Founded by Andrew Johnson in Des Moines, Iowa</strong>, Empower Communities Now INC began as a grassroots initiative aimed at filling resource gaps for newly arrived individuals and low-income families.</p>
+                    <p>Seeing firsthand the challenges faced by many in accessing basic services, Andrew launched the organization at 3116 Merle Hay Rd to become a central hub for workforce support, benefit assistance, and community upliftment.</p>
+                    <p><strong>Our mission:</strong> To improve the lives of individuals and families by providing access to essential services, resources, and opportunities. We empower underserved populations through job placement, education, food and clothing assistance, and community support initiatives that foster independence and dignity.</p>
+                    
+                    <div class="impact-stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Families Served</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">1,200+</div>
+                            <div class="stat-label">Services Provided</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Job Placements</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Community Focused</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in">
+                    <i class="fas fa-heart"></i>
+                    <h3>Community Impact</h3>
+                    <p>Through collaboration, compassion, and commitment to action, we've grown to become a trusted resource for Central Iowa families. Our work ensures no one is left behind in building a stronger, more inclusive community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team</h2>
+                <p>Dedicated professionals committed to empowering communities and changing lives through compassionate service.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div class="team-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Andrew Johnson</h3>
+                    <div class="title">Founder & Executive Director</div>
+                    <p>Community advocate and entrepreneur with a passion for connecting underserved individuals to vital support systems. Andrew's vision drives our mission to empower communities through comprehensive services and collaborative partnerships.</p>
+                </div>
+                <div class="team-card fade-in">
+                    <div class="team-photo">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Join Our Team</h3>
+                    <div class="title">We're Growing!</div>
+                    <p>Passionate about community service? We're always looking for dedicated individuals to join our mission. Whether you're interested in case management, program coordination, or volunteer leadership, we'd love to hear from you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Ready to access our services or partner with us? We're here to help and answer any questions you may have.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Address</strong><br>
+                            3116 Merle Hay Rd<br>
+                            Des Moines, IA 50310
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <a href="tel:515-473-8760" style="color: white;">(515) 473-8760</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:affordable128@gmail.com" style="color: white;">affordable128@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Office Hours</strong><br>
+                            Monday - Friday<br>
+                            9:00 AM - 5:00 PM (CST)
+                        </div>
+                    </div>
+                </div>
+                <div class="quick-actions fade-in">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <a href="#intake" class="action-btn">
+                            <i class="fas fa-clipboard-list"></i>
+                            Complete Intake Form
+                        </a>
+                        <a href="tel:515-473-8760" class="action-btn">
+                            <i class="fas fa-phone"></i>
+                            Call for Emergency Help
+                        </a>
+                        <a href="mailto:affordable128@gmail.com" class="action-btn">
+                            <i class="fas fa-envelope"></i>
+                            Email Us
+                        </a>
+                        <a href="#volunteer" class="action-btn">
+                            <i class="fas fa-hands-helping"></i>
+                            Volunteer With Us
+                        </a>
+                        <a href="#donate" class="action-btn">
+                            <i class="fas fa-heart"></i>
+                            Make a Donation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intake Form Section -->
+    <section id="intake" class="services" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Request Services</h2>
+                <p>Complete our intake form to get started with our services. We'll contact you within 1-2 business days to discuss your needs.</p>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="EmpowerCommunitiesIntakeForm.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 20px 40px;">
+                    <i class="fas fa-clipboard-list" style="margin-right: 10px;"></i>
+                    Complete Intake Form
+                </a>
+                <p style="margin-top: 1rem; color: var(--dark-gray);">
+                    Form available online or <a href="EmpowerCommunitiesIntakeForm.html" style="color: var(--royal-blue);">printable for hand completion</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Empower Communities Now INC</h3>
+                    <p>Dedicated to improving lives through essential services, resources, and opportunities. Empowering underserved populations with dignity and compassion.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="#services">Job Placement</a></p>
+                    <p><a href="#services">Housing Support</a></p>
+                    <p><a href="#services">Food Distribution</a></p>
+                    <p><a href="#services">Transportation</a></p>
+                    <p><a href="#services">Benefits Assistance</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Get Involved</h3>
+                    <p><a href="#volunteer">Volunteer</a></p>
+                    <p><a href="#donate">Donate</a></p>
+                    <p><a href="#contact">Partner With Us</a></p>
+                    <p><a href="mailto:affordable128@gmail.com?subject=Grant Opportunities">Grant Opportunities</a></p>
+                    <p><a href="#testimonials">Community Stories</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>3116 Merle Hay Rd<br>Des Moines, IA 50310</p>
+                    <p><a href="tel:515-473-8760">(515) 473-8760</a></p>
+                    <p><a href="mailto:affordable128@gmail.com">affordable128@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Empower Communities Now INC. All rights reserved. | Nonprofit Organization serving Central Iowa</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle (basic implementation)
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(30, 64, 175, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--royal-blue), var(--forest-green))';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Dynamic year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const footerText = document.querySelector('.footer-bottom p');
+            footerText.innerHTML = footerText.innerHTML.replace('2025', currentYear);
+        });
+
+        // Contact form handling (if you add a contact form later)
+        function handleContactForm(event) {
+            event.preventDefault();
+            // Add your form handling logic here
+            alert('Thank you for your message! We will get back to you within 1-2 business days.');
+        }
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add scroll to top button when user scrolls down
+        window.addEventListener('scroll', function() {
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            if (scrollBtn) {
+                if (window.scrollY > 300) {
+                    scrollBtn.style.display = 'block';
+                } else {
+                    scrollBtn.style.display = 'none';
+                }
+            }
+        });
+    </script>
+
+    <!-- Scroll to Top Button (hidden by default) -->
+    <button id="scrollTopBtn" onclick="scrollToTop()" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--royal-blue);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    " onmouseover="this.style.background='var(--forest-green)'" onmouseout="this.style.background='var(--royal-blue)'">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html>
